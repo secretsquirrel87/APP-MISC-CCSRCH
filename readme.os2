@@ -1,0 +1,38 @@
+This is the OS/2 port of ccsrch 1.0.9, built with GCC v4.4.6.
+
+The sources and the binary are located in the single directory where this package has
+been extracted.
+
+I have included my modified makefile, as well as the original (too lazy to work out the
+if statement to determine the OS, and my own OS variable says "ecs" instead of "OS2"
+so...).
+
+The .cmd file with the same name as the binary is simply a batch wrapper adapted from
+the one built with the package (which looks like Win32 batch to me) to combine a useful
+set of options on the command line and format a name for the output file. It works for
+me under 4OS2.EXE, but the date formatting will be lopped off if using CMD.EXE.
+
+Run ccsrch.cmd or ccsrch.exe without parameters to get a brief listing of what the
+options are.
+
+ccsrch will recursively search from the given starting directory, looking for credit card
+numbers. This is useful to find where you may have inadvertently left easily-accessible
+yet highly sensitive data. You may then review the output file (or stout) and decide what
+should be removed. See README.md for a more detailed explanation.
+
+Requirements:
+
+- libc064.dll (ftp://ftp.netlabs.org/pub/gcc/libc-0.6.4-csd4.zip or via yum)
+- gcc446.dll (http://sourceforge.net/projects/ecsports/files/ or via yum)
+
+To-do:
+
+1. Better optimize the batch file for CMD.EXE.
+
+Please consider donating to Paul Smedley, without whom this little build would not have
+been possible (nor so many other wonderful things we now have on OS/2 and eCS).
+
+Lewis Rosenthal
+New York, USA
+lgrosenthal [AT] 2rosenthal [DOT] com
+21 May, 2013
